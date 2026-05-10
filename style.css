@@ -1,0 +1,469 @@
+:root {
+    --sidebar-bg: #074602;
+    --main-bg: #f4f7f9;
+    --primary-blue: #004e89;
+    --text-light: #ffffff;
+    --text-dark: #333;
+    --card-bg: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--main-bg);
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: var(--text-light);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    padding: 0 20px 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.profile-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #3a506b;
+    object-fit: cover;
+}
+
+.profile-section h3 {
+    margin: 10px 0 5px;
+    font-size: 1rem;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: #4cc9f0;
+    margin: 0;
+}
+
+.nav-menu {
+    margin-top: 30px;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 25px;
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-item.active, .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-left: 4px solid #4cc9f0;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, #04f03f 0%, #017e01 100%);
+    border-radius: 15px;
+    padding: 40px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.course-code { font-size: 0.7rem; opacity: 0.8; letter-spacing: 1px; }
+
+.hero-text h1 { font-size: 2.5rem; margin: 10px 0; }
+
+.description { max-width: 600px; opacity: 0.9; margin-bottom: 25px; }
+
+.hero-actions .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-white { background: white; color: var(--primary-blue); }
+
+.btn-outline { 
+    background: transparent; 
+    color: white; 
+    border: 1px solid rgba(255,255,255,0.4) !important; 
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f0f4f8;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    color: #888;
+    font-weight: bold;
+}
+
+.card {
+    background: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+
+/* Layout Utilities */
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Card Header & Badges (Green Theme Aligned) */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.card-header h3 { 
+    margin: 0; 
+    font-size: 1.1rem; 
+    color: #333; 
+}
+
+.badge {
+    background: #e8f5e9; /* Light green tint */
+    color: #074602;      /* Using your sidebar green */
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.chart-placeholder {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+}
+
+.note { color: #aaa; font-size: 0.9rem; }
+
+/* Competency Progress Bars */
+.progress-list { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.progress-item .progress-info {
+    display: flex; 
+    justify-content: space-between;
+    font-size: 0.9rem; 
+    margin-bottom: 8px; 
+    font-weight: 600;
+    color: #444;
+}
+
+.progress-track {
+    height: 8px; 
+    background: #eef2f5; 
+    border-radius: 4px; 
+    overflow: hidden;
+}
+
+.progress-fill { 
+    height: 100%; 
+    border-radius: 4px; 
+    transition: width 1s ease-in-out;
+}
+
+/* Progress Colors */
+.progress-fill.blue { background: #1a73e8; }
+.progress-fill.green { background: #0fa958; }
+.progress-fill.purple { background: #9b51e0; }
+.progress-fill.red { background: #eb5757; }
+
+/* Portfolio Section */
+.portfolio-section h2 { 
+    margin-bottom: 5px; 
+    color: #333; 
+    font-size: 1.5rem;
+}
+
+.subtitle-text { 
+    color: #777; 
+    margin-top: 0;
+    margin-bottom: 25px; 
+    font-size: 0.9rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portfolio-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border: 1px solid #eaeaea;
+    transition: transform 0.2s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+}
+
+.card-image {
+    height: 140px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 3rem; 
+}
+
+.bg-orange { background: #f39c12; }
+.bg-pink { background: #e81e63; }
+.bg-green { background: #0fa958; }
+
+.card-content { 
+    padding: 25px 20px 20px; 
+}
+
+.tags { margin-bottom: 15px; }
+
+.tag { 
+    font-size: 0.65rem; 
+    color: #1a73e8; 
+    font-weight: bold; 
+    margin-right: 10px; 
+    letter-spacing: 0.5px;
+}
+
+.card-content h4 { 
+    margin: 0 0 10px; 
+    font-size: 1.1rem; 
+    color: #222;
+}
+
+.card-content p { 
+    font-size: 0.85rem; 
+    color: #666; 
+    line-height: 1.5; 
+    margin-bottom: 25px; 
+}
+
+.card-footer {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 0.75rem; 
+    border-top: 1px solid #f0f0f0; 
+    padding-top: 15px;
+}
+
+.status.success { 
+    color: #074602; /* Green theme highlight */
+    background: #e8f5e9; 
+    padding: 5px 10px; 
+    border-radius: 12px; 
+    font-weight: bold;
+}
+
+.date { 
+    color: #999; 
+    font-weight: 500;
+}
+/* Typography & Utilities */
+h2 { color: #333; font-size: 1.5rem; margin-bottom: 5px; }
+.font-bold { font-weight: bold; }
+.text-green { color: #0fa958; }
+.text-red { color: #eb5757; }
+.btn-outline-dark {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.btn-outline-dark:hover {
+    background: #f4f7f9;
+    border-color: #bbb;
+}
+
+/* 5-Step Reflection Grid */
+.reflection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.step-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.step-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+.step-card h4 { margin: 0 0 5px 0; color: #074602; font-size: 1.1rem; }
+.step-card p { margin: 0; font-size: 0.85rem; color: #64748b; line-height: 1.4; }
+
+/* Gradebook Table */
+.table-responsive { overflow-x: auto; }
+.grade-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+.grade-table th {
+    background-color: #074602; /* Theme Green */
+    color: white;
+    padding: 12px 15px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+.grade-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+.grade-table tr:hover td { background-color: #f9fbf9; }
+
+/* Grade Pills */
+.grade-pill {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+.val-high { background: #e8f5e9; color: #0fa958; }
+.val-good { background: #e3f2fd; color: #1a73e8; }
+.val-mid { background: #fff3e0; color: #f39c12; }
+.val-low { background: #fce4ec; color: #e81e63; }
+.val-fail { background: #ffebee; color: #eb5757; }
+
+/* Parent Toolkit Cards */
+.action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 15px;
+}
+.bg-blue { background: #1a73e8; }
+.bg-purple { background: #9b51e0; }
+
+/* Reflective Practice Section */
+.adjustment-content h4 { color: #074602; margin-bottom: 10px; border-bottom: 2px solid #e8f5e9; padding-bottom: 5px; display: inline-block;}
+.adjustment-content p { color: #555; line-height: 1.6; font-size: 0.95rem; }
+.styled-list { padding-left: 20px; color: #555; line-height: 1.8; font-size: 0.95rem; }
+.styled-list li { margin-bottom: 10px; }
+.styled-list strong { color: #222; }
+/* Form Elements */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.85rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #074602;
+    box-shadow: 0 0 0 3px rgba(7, 70, 2, 0.1);
+}
